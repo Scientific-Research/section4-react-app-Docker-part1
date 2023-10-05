@@ -17,5 +17,11 @@ COPY . .
 # ADD file.zip . : second feature => ADD will automatically uncompress it into the directory
 # but in normal situation, we use always COPY and when we need these two extra feature, we can use the ADD feature.
 
-
+# we can run any command with the RUN command that we run it normally in Terminal.
+RUN npm install
+# or run any windows or Linux command, for example, we want to install python on this image as well!
+# but when we run this command, we get an error, because alpine linux doesn't have apt package 
+# manager and has apk package manager. So, we don't need to do this in this lesson, that's why 
+# i comment it.
+# RUN apt install python
 
