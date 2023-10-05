@@ -36,3 +36,17 @@ ENV API_URL = http://api.myapp.com/
 # but this is only documentation, and later we have to map 300 port in host to the port in conainer
 EXPOSE 3000
 
+# we supply a default command to be executed and we don't need anymore to repeat this command in our
+# $ docker run react-app npm start => make it simple => docker run react-app
+# this is the shell form of command 
+# docker will execute this command in a separate shell, that's why it called shell form
+# on linux it located in /bin/sh(original shell)
+# on windows it located in cmd(command prompt)
+# CMD npm start
+
+# another form is Exec form which takes an array of string
+# the comman best practice is to use below form: Exec form, because it will excuted directly
+# and not in a separate shell - and easier and faster to clean up the resources when we stop the container
+# ALWAYS USE EXEC FORM(BELOW FORM)
+CMD ["npm", "start"]
+
