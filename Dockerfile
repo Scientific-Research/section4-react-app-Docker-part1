@@ -49,4 +49,17 @@ EXPOSE 3000
 # and not in a separate shell - and easier and faster to clean up the resources when we stop the container
 # ALWAYS USE EXEC FORM(BELOW FORM)
 CMD ["npm", "start"]
+# shell form of entrypoint
+# ENTRYPONIT npm start
+# Exec form -  we can always overwrite the default command when we start a container
+# we can run this command: docker run react-app echo hello => it will overwrite our default command: npm start
+# but if we want to overwrite an entrypoint, we have to use --entrypoint
+# docker run react-app --entryponit 
+# if we are sure that this is the program or command that will be started whatever we start the container.
+# there is no exception. in this case, we use the ENTRYPOINT
+# but with CMD, we have a bit more flexibility and we can always overwrite it.
+# with both of these commands, we can supply the default command. 
+# this is the matter of personal perference. I prefer to use CMD personally.
+# ENTRYPONIT ["npm","start"]
+
 
