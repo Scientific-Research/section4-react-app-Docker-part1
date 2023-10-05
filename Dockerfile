@@ -15,7 +15,8 @@ WORKDIR /app
 # if we have the file with space like hello world.txt and we want to copy it into the destination? we use the
 # array form of COPY => COPY["","",""]
 # COPY ["hello world.txt", "."]
-COPY . .
+# COPY . .
+COPY package*.json .
 # with ADD, we have two more features: we can add URL to our image:
 # ADD http://.../file.json . : first feature
 # ADD file.zip . : second feature => ADD will automatically uncompress it into the directory
@@ -23,6 +24,7 @@ COPY . .
 
 # we can run any command with the RUN command that we run it normally in Terminal.
 RUN npm install
+COPY . .
 # or run any windows or Linux command, for example, we want to install python on this image as well!
 # but when we run this command, we get an error, because alpine linux doesn't have apt package 
 # manager and has apk package manager. So, we don't need to do this in this lesson, that's why 
