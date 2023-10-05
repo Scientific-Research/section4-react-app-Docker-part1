@@ -32,3 +32,7 @@ ENV API_URL = http://api.myapp.com/
 # but this is only documentation, and later we have to map 300 port in host to the port in conainer
 EXPOSE 3000
 
+# create the user and group of this user in a single line command
+RUN addgroup app && adduser -S -G app app
+# and then set the user
+USER app
