@@ -28,3 +28,7 @@ RUN npm install
 # environment variable for example for an API
 ENV API_URL = http://api.myapp.com/
 
+# Exposing Ports => what port on this container will be listening on? answer: port 3000
+# but this is only documentation, and later we have to map 300 port in host to the port in conainer
+EXPOSE 3000
+
