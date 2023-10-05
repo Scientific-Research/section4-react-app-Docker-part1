@@ -1,5 +1,9 @@
 # this is the link: https://hub.docker.com/_/node/tags?page=1&name=14.16.0-alpine3.13, where i got the value for FROM section
 FROM node:14.16.0-alpine3.13 
+# create the user and group of this user in a single line command
+RUN addgroup app && adduser -S -G app app
+# and then set the user
+USER app
 # COPY package.json README.md /app/
 # COPY package*.json /app/
 # copy everything in our current directory to the app directory: using .
@@ -32,7 +36,3 @@ ENV API_URL = http://api.myapp.com/
 # but this is only documentation, and later we have to map 300 port in host to the port in conainer
 EXPOSE 3000
 
-# create the user and group of this user in a single line command
-RUN addgroup app && adduser -S -G app app
-# and then set the user
-USER app
