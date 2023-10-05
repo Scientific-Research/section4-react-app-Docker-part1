@@ -25,3 +25,6 @@ RUN npm install
 # i comment it.
 # RUN apt install python
 
+# environment variable for example for an API
+ENV API_URL = http://api.myapp.com/
+
